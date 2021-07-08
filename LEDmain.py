@@ -8,7 +8,7 @@ import datetime
 import RPi.GPIO as GPIO
 from time import sleep
 print("Wait for 40 seconds")
-sleep(40)
+#sleep(40)
 print("ready")
 
 
@@ -30,7 +30,7 @@ GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 def buttonClick(channel):
 	global button_einschalten
 	if button_einschalten:
-		print("")
+		pixels.fill((100,255,0))
 	else:
 		pixels.fill(0)
 	button_einschalten = not button_einschalten
