@@ -7,15 +7,20 @@ import math
 import datetime
 import RPi.GPIO as GPIO
 from time import sleep
+import os
+from ledAnzahl import anzahl
 print("Wait for 40 seconds")
 #sleep(40)
 print("ready")
 
 
-HOST = '192.168.1.77'  # Standard loopback interface address (localhost)
+
+IP = str(os.system('hostname -I'))
+
+HOST = IP  # Standard loopback interface address (localhost)
 PORT = 1234        # Port to listen on (non-privileged ports are > 1023)
 
-ledAnzahl = 113
+ledAnzahl = anzahl()
 
 boolwecker = False
 
